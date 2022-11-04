@@ -3,5 +3,37 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "@expd/my-lib": {
+      "projectType": "library",
+      "root": "projects/expd/my-lib",
+      "sourceRoot": "projects/expd/my-lib/src",
+      "prefix": "my-lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/expd/my-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/expd/my-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/expd/my-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/expd/my-lib/src/test.ts",
+            "tsConfig": "projects/expd/my-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/expd/my-lib/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "@expd/my-lib"
 }
