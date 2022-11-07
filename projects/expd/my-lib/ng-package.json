@@ -3,5 +3,6 @@
   "dest": "../../../dist/expd/my-lib",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": ["date-fns"]
 }
